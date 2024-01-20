@@ -4,64 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사용자 정보</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        form {
-            max-width: 300px;
-            margin: 20px auto;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f8f8f8;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        #displayUserInfo {
-            max-width: 300px;
-            margin: 20px auto;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <h1>사용자 정보</h1>
@@ -78,33 +21,6 @@
 
     <div id="displayUserInfo"></div>
 
-    <script>
-        function saveUserInfo() {
-            var name = document.getElementById("name").value;
-            var age = document.getElementById("age").value;
-
-            // URL에 정보 추가
-            var url = window.location.href.split('?')[0] + `?name=${name}&age=${age}`;
-
-            // 정보 표시
-            document.getElementById("displayUserInfo").innerHTML = `<p>이름: ${name}</p><p>나이: ${age}</p>`;
-
-            // URL 갱신
-            window.history.replaceState({}, document.title, url);
-        }
-
-        // 페이지 로드 시 URL에서 정보 읽어오기
-        window.onload = function() {
-            var params = new URLSearchParams(window.location.search);
-            var name = params.get('name');
-            var age = params.get('age');
-
-            if (name && age) {
-                document.getElementById("name").value = name;
-                document.getElementById("age").value = age;
-                document.getElementById("displayUserInfo").innerHTML = `<p>이름: ${name}</p><p>나이: ${age}</p>`;
-            }
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
