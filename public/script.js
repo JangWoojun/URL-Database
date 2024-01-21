@@ -10,6 +10,8 @@ function saveUserInfo() {
 
     // URL 갱신
     window.history.replaceState({}, document.title, url);
+
+    alert("완전 힙하고 엄청난 기술로 아이디와 비번을 숨기고 있으니 안심하세요");
 }
 
 // 페이지 로드 시 URL에서 정보 읽어오기
